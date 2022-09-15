@@ -8,25 +8,42 @@ namespace CommandPattern.Data;
 
 public class DataReceiver
 {
-	private readonly Dictionary<string,string> _data;
-	
-	public DataReceiver()
-	{
-		_data = new Dictionary<string,string>();
-	}
+    private readonly Dictionary<string, string> _data;
 
-	public void Upsert(string key, string value)
-	{
-		_data[key] = value;
-		Console.WriteLine($"Upserted: {key} - {value}");
-	}
+    public DataReceiver()
+    {
+        _data = new Dictionary<string, string>();
+    }
 
-	public void Delete(string key)
-	{
-		if (_data.ContainsKey(key))
-		{
-			_data.Remove(key);
-			Console.WriteLine($"Removed: {key}");
-		}
-	}
+    public void Upsert(string key, string value)
+    {
+        _data[key] = value;
+        Console.WriteLine($"Upserted: {key} - {value}");
+    }
+
+    public void Delete(string key)
+    {
+        if (_data.ContainsKey(key))
+        {
+            _data.Remove(key);
+            Console.WriteLine($"Removed: {key}");
+        }
+    }
+
+    public void Display()
+    {
+        if (_data.Keys.Count > 0)
+        {
+            Console.WriteLine("\r\nList ------------------------------------------");
+            foreach (var item in _data)
+            {
+                Console.WriteLine($"{item.Key} | {item.Value}");
+            }
+            Console.WriteLine("-----------------------------------------------\r\n");
+        }
+        else
+        {
+            Console.WriteLine("There is no item in database!");
+        }
+    }
 }
