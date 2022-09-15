@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Infrastructures.Commands;
 
-public class UpsertCommand : Command
+public sealed class UpsertCommand : Command
 {
     private string key { get; set; }
     private string value { get; set; }

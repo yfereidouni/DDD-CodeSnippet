@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Infrastructures.Commands
 {
-    public class DeleteCommand : Command
+    public sealed class DeleteCommand : Command
     {
         private string key { get; set; }
         public DeleteCommand(string key, DataReceiver dataReceiver) : base(dataReceiver)

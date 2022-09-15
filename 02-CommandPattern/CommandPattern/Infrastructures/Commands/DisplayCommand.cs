@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Infrastructures.Commands;
 
-public class DisplayCommand : Command
+public sealed class DisplayCommand : Command
 {
     private string key { get; set; }
     private string value { get; set; }

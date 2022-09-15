@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Infrastructures;
 
-public class Command : ICommand
+public abstract class Command : ICommand
 {
     protected DataReceiver _dataReceiver;
 
@@ -16,8 +16,5 @@ public class Command : ICommand
     {
         _dataReceiver = dataReceiver;
     }
-    public virtual void Execute()
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void Execute();
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Infrastructures.Invoker;
 
-public class DataCommandInvoker
+public sealed class DataCommandInvoker
 {
 	private ICommand? command;
 

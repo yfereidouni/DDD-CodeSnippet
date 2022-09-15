@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Data;
 
-public class DataReceiver
+public sealed class DataReceiver
 {
     private readonly Dictionary<string, string> _data;
 
